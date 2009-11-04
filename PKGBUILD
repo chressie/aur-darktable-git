@@ -3,7 +3,7 @@
 
 pkgname=darktable-git
 pkgrel=1
-pkgver=20091104
+pkgver=20091026
 pkgdesc="Utility to organize and develop raw images"
 arch=('i686' 'x86_64')
 url="http://darktable.sf.net/"
@@ -38,7 +38,7 @@ build() {
 
   cd $srcdir/$_gitname
   git clean -dfx
-  ./autogen.sh || return 1
+  autoreconf --install || return 1
   ./configure --prefix=/usr || return 1
   make || return 1
   make DESTDIR=$pkgdir install || return 1
