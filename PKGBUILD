@@ -3,7 +3,7 @@
 
 pkgname=darktable-git
 pkgrel=1
-pkgver=20091104
+pkgver=20091116
 pkgdesc="Utility to organize and develop raw images"
 arch=('i686' 'x86_64')
 url="http://darktable.sf.net/"
