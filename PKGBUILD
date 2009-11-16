@@ -8,8 +8,8 @@ pkgdesc="Utility to organize and develop raw images"
 arch=('i686' 'x86_64')
 url="http://darktable.sf.net/"
 license=('GPL3')
-depends=('gegl>=0.0.22' 'libglade>=2.0' 'exiv2>=0.18' 'lcms')
-makedepends=('git' 'autoconf>=2.63')
+depends=('gegl' 'libglade' 'exiv2' 'lcms')
+makedepends=('git' 'autoconf')
 provides=('darktable')
 conflicts=('darktable')
 source=()
