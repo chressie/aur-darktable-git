@@ -30,7 +30,7 @@ build() {
   unset CFLAGS
   unset CXXFLAGS
 
-  if [ -d $srcdir/$_gitname ]; then
+  if [ -d $srcdir/$_gitname/.git ]; then
     cd $srcdir/$_gitname && git pull origin
   else
     git clone $_gitroot $srcdir/$_gitname
