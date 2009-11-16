@@ -30,13 +30,16 @@ build() {
   unset CFLAGS
   unset CXXFLAGS
 
-  if [ -d $srcdir/$_gitname/.git ]; then
-    cd $srcdir/$_gitname && git pull origin
+  _gitdir=$srcdir/$_gitname
+
+  if [ -d $_gitdir/.git ]; then
+    cd $_gitdir
+    git pull origin
   else
     git clone $_gitroot $srcdir/$_gitname
+    cd $_gitdir
   fi
 
-  cd $srcdir/$_gitname
   git clean -dfx
   ./autogen.sh || return 1
   ./configure --prefix=/usr || return 1
