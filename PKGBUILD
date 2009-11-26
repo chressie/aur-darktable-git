@@ -8,10 +8,11 @@ pkgdesc="Utility to organize and develop raw images"
 arch=(i686 x86_64)
 url=http://darktable.sf.net/
 license=(GPL3)
-depends=(exiv2 gegl lcms lensfun libglade)
+depends=(exiv2 gconf gegl lcms lensfun libglade)
 makedepends=(git intltool)
 provides=(darktable)
 conflicts=(darktable)
+install=darktable.install
 source=()
 md5sums=()
 
@@ -42,7 +43,7 @@ build() {
 
   git clean -dfx
   ./autogen.sh || return 1
-  ./configure --prefix=/usr || return 1
+  ./configure --prefix=/usr --disable-schemas-install --with-gconf-schema-file-dir=/usr/share/gconf/schemas || return 1
   make || return 1
   make DESTDIR=$pkgdir install || return 1
   mkdir -p $pkgdir/usr/share/doc/$pkgname-$pkgver
