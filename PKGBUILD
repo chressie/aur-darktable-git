@@ -21,10 +21,6 @@ _gitname=darktable
 
 build() {
   # Linking fails with --as-needed linker option
-  #if [ ! -z "$LDFLAGS" ]; then
-  #  LDFLAGS=${LDFLAGS/-Wl,--as-needed/}
-  #  LDFLAGS=${LDFLAGS/,--as-needed/}
-  #fi
   unset LDFLAGS
 
   # Use maintainers optimizations
