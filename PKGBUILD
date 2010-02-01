@@ -29,7 +29,7 @@ build() {
     cd $_gitdir
     git pull origin
   else
-    git clone $_gitroot $srcdir/$_gitname
+    git clone $_gitroot $_gitdir
     cd $_gitdir
   fi
 
