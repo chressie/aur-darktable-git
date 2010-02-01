@@ -39,5 +39,5 @@ build() {
   make || return 1
   make DESTDIR=$pkgdir install || return 1
   mkdir -p $pkgdir/usr/share/doc/$pkgname-$pkgver
-  install -m644 AUTHORS LICENSE NEWS README TODO $pkgdir/usr/share/doc/$pkgname-$pkgver || return 1
+  install -m644 AUTHORS LICENSE NEWS README TODO TRANSLATORS $pkgdir/usr/share/doc/$pkgname-$pkgver || return 1
 }
