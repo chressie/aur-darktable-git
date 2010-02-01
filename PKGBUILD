@@ -13,7 +13,7 @@ makedepends=(git 'intltool>=0.40')
 provides=(darktable)
 conflicts=(darktable)
 install=darktable.install
-source=(darktable.install)
+source=()
 
 _gitroot=git://darktable.git.sf.net/gitroot/darktable/darktable
 _gitname=darktable
@@ -41,4 +41,4 @@ build() {
   install -m644 AUTHORS LICENSE NEWS README TODO TRANSLATORS $pkgdir/usr/share/doc/$pkgname-$pkgver || return 1
 }
 
-md5sums=('c9fe1c36d32930bfc10130c425e74c36')
+md5sums=()
