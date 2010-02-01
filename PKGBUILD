@@ -23,10 +23,6 @@ build() {
   # Linking fails with --as-needed linker option
   unset LDFLAGS
 
-  # Use maintainers optimizations
-  unset CFLAGS
-  unset CXXFLAGS
-
   _gitdir=$srcdir/$_gitname
 
   if [ -d $_gitdir/.git ]; then
