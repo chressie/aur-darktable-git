@@ -1,5 +1,5 @@
-# Contributor: Christian Himpel <chressie at gmail dot com>
-# Maintainer:  Johannes Hanika  <hanatos at gmail dot com>
+# Maintainer:  Christian Himpel <chressie at gmail dot com>
+# Contributor: Johannes Hanika  <hanatos at gmail dot com>
 
 pkgname=darktable-git
 pkgrel=1
