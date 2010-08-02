@@ -19,9 +19,6 @@ _gitroot=git://darktable.git.sf.net/gitroot/darktable/darktable
 _gitname=darktable
 
 build() {
-  # Linking fails with --as-needed linker option
-  unset LDFLAGS
-
   _gitdir=$srcdir/$_gitname
 
   if [ -d $_gitdir/.git ]; then
