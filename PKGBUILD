@@ -8,8 +8,8 @@ pkgdesc="Utility to organize and develop raw images"
 arch=(i686 x86_64)
 url=http://darktable.sf.net/
 license=(GPL3)
-depends=('exiv2>=0.18' 'gconf>=2.26' 'intltool>=0.40' lcms 'lensfun>=0.2.3' libglade 'libgphoto2>=2.4.5')
-makedepends=(git 'intltool>=0.40')
+depends=(gconf libglade exiv2 openexr libgphoto2 lensfun lcms)
+makedepends=(git intltool)
 provides=(darktable)
 conflicts=(darktable)
 install=darktable.install
