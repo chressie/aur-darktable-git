@@ -30,12 +30,12 @@ build() {
   fi
 
   git clean -dfx
-  ./autogen.sh || return 1
-  ./configure --prefix=/usr --disable-schemas-install --with-gconf-schema-file-dir=/usr/share/gconf/schemas || return 1
-  make || return 1
-  make DESTDIR=$pkgdir install || return 1
+  ./autogen.sh
+  ./configure --prefix=/usr --disable-schemas-install --with-gconf-schema-file-dir=/usr/share/gconf/schemas
+  make
+  make DESTDIR=$pkgdir install
   install -m755 -d $pkgdir/usr/share/doc/$pkgname-$pkgver
-  install -m644 AUTHORS LICENSE NEWS README TODO TRANSLATORS $pkgdir/usr/share/doc/$pkgname-$pkgver || return 1
+  install -m644 AUTHORS LICENSE NEWS README TODO TRANSLATORS $pkgdir/usr/share/doc/$pkgname-$pkgver
 }
 
 md5sums=()
