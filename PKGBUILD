@@ -33,6 +33,10 @@ build() {
   ./autogen.sh
   ./configure --prefix=/usr --disable-schemas-install --with-gconf-schema-file-dir=/usr/share/gconf/schemas
   make
+}
+
+package() {
+  cd $srcdir/$_gitname
   make DESTDIR=$pkgdir install
   install -m755 -d $pkgdir/usr/share/doc/$pkgname-$pkgver
   install -m644 AUTHORS LICENSE NEWS README TODO TRANSLATORS $pkgdir/usr/share/doc/$pkgname-$pkgver
