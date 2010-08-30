@@ -32,6 +32,7 @@ build() {
   git clean -dfx
   ./autogen.sh
   ./configure --prefix=/usr --disable-schemas-install --with-gconf-schema-file-dir=/usr/share/gconf/schemas
+  sed -i -e 's@/usr/share/xml/docbook/stylesheet/docbook-xsl/fo/docbook\.xsl@/usr/share/xml/docbook/xsl-stylesheets-1.75.2/fo/docbook.xsl@' doc/usermanual/xsl/darktable.xsl
   make
 }
 
