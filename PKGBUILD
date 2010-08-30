@@ -38,8 +38,8 @@ build() {
 package() {
   cd $srcdir/$_gitname
   make DESTDIR=$pkgdir install
-  install -m755 -d $pkgdir/usr/share/doc/$pkgname-$pkgver
-  install -m644 AUTHORS LICENSE NEWS README TODO TRANSLATORS $pkgdir/usr/share/doc/$pkgname-$pkgver
+  mv $pkgdir/usr/share/doc/darktable $pkgdir/usr/share/doc/$pkgname-$pkgver
+  mv $pkgdir/usr/share/doc/*.pdf $pkgdir/usr/share/doc/$pkgname-$pkgver
 }
 
 md5sums=()
