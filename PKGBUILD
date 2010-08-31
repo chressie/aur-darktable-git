@@ -9,7 +9,7 @@ arch=(i686 x86_64)
 url=http://darktable.sf.net/
 license=(GPL3)
 depends=(gconf libglade exiv2 openexr libgphoto2 libgnome-keyring lensfun lcms)
-makedepends=(git intltool fop docbook-xsl)
+makedepends=(git intltool)
 provides=(darktable)
 conflicts=(darktable)
 install=darktable.install
@@ -32,7 +32,6 @@ build() {
   git clean -dfx
   ./autogen.sh
   ./configure --prefix=/usr --disable-schemas-install --with-gconf-schema-file-dir=/usr/share/gconf/schemas
-  sed -i -e 's@/usr/share/xml/docbook/stylesheet/docbook-xsl/fo/docbook\.xsl@/usr/share/xml/docbook/xsl-stylesheets-1.75.2/fo/docbook.xsl@' doc/usermanual/xsl/darktable.xsl
   make
 }
 
@@ -40,7 +39,6 @@ package() {
   cd $srcdir/$_gitname
   make DESTDIR=$pkgdir install
   mv $pkgdir/usr/share/doc/darktable $pkgdir/usr/share/doc/$pkgname-$pkgver
-  mv $pkgdir/usr/share/doc/*.pdf $pkgdir/usr/share/doc/$pkgname-$pkgver
 }
 
 md5sums=()
