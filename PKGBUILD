@@ -15,6 +15,7 @@ provides=(darktable)
 conflicts=(darktable)
 install=darktable.install
 source=()
+options=(!strip)
 
 _gitroot=git://darktable.git.sf.net/gitroot/darktable/darktable
 _gitname=darktable
@@ -32,7 +33,7 @@ build() {
 
   git clean -dfx
   ./autogen.sh
-  ./configure --prefix=/usr --disable-schemas-install --with-gconf-schema-file-dir=/usr/share/gconf/schemas
+  ./configure --enable-debug --prefix=/usr --disable-schemas-install --with-gconf-schema-file-dir=/usr/share/gconf/schemas
   make
 }
 
