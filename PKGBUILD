@@ -4,16 +4,16 @@
 
 pkgname=darktable-git
 pkgrel=1
-pkgver=20100908
+pkgver=20101208
 pkgdesc="Utility to organize and develop raw images"
 arch=(i686 x86_64)
 url=http://darktable.sf.net/
 license=(GPL3)
-depends=(gconf libglade exiv2 openexr libgphoto2 libgnome-keyring lensfun lcms)
-makedepends=(git intltool)
+depends=(gconf libglade exiv2 openexr libgphoto2 libgnome-keyring lensfun lcms openexr lcms2)
+makedepends=(git intltool cmake)
 provides=(darktable)
 conflicts=(darktable)
-install=darktable.install
+install=
 source=()
 options=(!strip)
 
@@ -32,13 +32,14 @@ build() {
   fi
 
   git clean -dfx
-  ./autogen.sh
-  ./configure --enable-debug --prefix=/usr --disable-schemas-install --with-gconf-schema-file-dir=/usr/share/gconf/schemas
+  test ! -d build && mkdir build
+  cd build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release ..
   make
 }
 
 package() {
-  cd $srcdir/$_gitname
+  cd $srcdir/$_gitname/build
   make DESTDIR=$pkgdir install
   mv $pkgdir/usr/share/doc/darktable $pkgdir/usr/share/doc/$pkgname-$pkgver
 }
