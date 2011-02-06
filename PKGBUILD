@@ -47,9 +47,10 @@ build() {
 
   cmake \
       -DCMAKE_INSTALL_PREFIX=/usr \
-      -DCMAKE_BUILD_TYPE=Release .. \
+      -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_USERMANUAL=False \
-      -DDONT_INSTALL_GCONF_SCHEMAS=True
+      -DDONT_INSTALL_GCONF_SCHEMAS=True \
+      ..
   make
 }
 
