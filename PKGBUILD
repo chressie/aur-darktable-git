@@ -59,7 +59,7 @@ package() {
   make DESTDIR="${pkgdir}" install
 
   # Attribute versioning information to the documentation
-  #mv "${pkgdir}/usr/share/doc/darktable" "${pkgdir}/usr/share/doc/${pkgname}-${pkgver}"
+  mv "${pkgdir}/usr/share/doc/darktable" "${pkgdir}/usr/share/doc/${pkgname}-${pkgver}"
 
   # Move "darktable.schemas" to "usr/share/gconf/schemas/" (standard location for Arch Linux)
   # letting makepkg/emptydirs delete the now-empty previous schemas directory
