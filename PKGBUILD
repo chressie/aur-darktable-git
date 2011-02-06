@@ -7,23 +7,23 @@ pkgname=darktable-git
 pkgrel=1
 pkgver=20110206
 pkgdesc="A virtual lighttable and darkroom for photographers"
-arch=("i686" "x86_64")
-url="http://darktable.sourceforge.net/"
-license=("GPL3")
-depends=("gconf" "libglade" "hicolor-icon-theme" "desktop-file-utils" "lcms2" "lensfun"
-         "exiv2" "openexr" "librsvg" "libgphoto2" "libgnome-keyring" "curl")
-makedepends=("git" "intltool" "cmake")
+arch=(i686 x86_64)
+url=http://darktable.sourceforge.net/
+license=(GPL3)
+depends=(gconf libglade hicolor-icon-theme desktop-file-utils lcms2 lensfun
+         exiv2 openexr librsvg libgphoto2 libgnome-keyring curl)
+makedepends=(git intltool cmake)
 optdepends=()
-provides=("darktable")
-conflicts=("darktable")
+provides=(darktable)
+conflicts=(darktable)
 backup=()
 options=(!emptydirs)
-install="darktable.install"
-source=("darktable.install")
-md5sums=("b1d1f094aec82e7b6eaeaba1e961a074")
+install=darktable.install
+source=(darktable.install)
+md5sums=(b1d1f094aec82e7b6eaeaba1e961a074)
 
-_gitroot="git://darktable.git.sf.net/gitroot/darktable/darktable"
-_gitname="darktable"
+_gitroot=git://darktable.git.sf.net/gitroot/darktable/darktable
+_gitname=darktable
 
 build() {
   local _gitdir="${srcdir}/${_gitname}"
