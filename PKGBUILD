@@ -41,7 +41,7 @@ build() {
 
   cd "${_gitdir}"
   git clean -dfx
-  git reset --hard HEAD
+  git reset --hard
   [[ ! -d build ]] && mkdir build
   cd build
 
